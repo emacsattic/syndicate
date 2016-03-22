@@ -81,7 +81,6 @@
   "gj" 'org-forward-heading-same-level
   "gk" 'org-backward-heading-same-level
   "gl" 'outline-next-visible-heading
-  "go" 'syndicate-recompute-clocks
   "<" 'org-metaleft
   ">" 'org-metaright
   "t" 'org-todo

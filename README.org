@@ -14,7 +14,6 @@ The leader part was what got me to make a separate package, because I imagine th
 | gj    | org-forward-heading-same-level  |
 | gk    | org-backward-heading-same-level |
 | gl    | outline-next-visible-heading    |
-| go    | syndicate-recompute-clocks |
 | <     | org-metaleft                    |
 | >     | org-metaright                   |
 | t     | org-todo                        |
@@ -22,3 +21,4 @@ The leader part was what got me to make a separate package, because I imagine th
 * Commands
 - =syndicate-open-links= :: Open a link from a visual selection
 - =syndicate-open-links-incognito= :: Open a link in incognito from a visual selection
+- =syndicate-recompute-clocks= :: recompute clocks from a visual selection
