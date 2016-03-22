@@ -7,3 +7,18 @@ The keybindings were convenient, however, there were issues:
 - leader commands would override my own
 - hitting =O= on a heading would insert another heading above it
 The leader part was what got me to make a separate package, because I imagine that some users will want some predefined maps of that sort, but having conflicting bindings and looking to migrate to [[https://github.com/noctuid/general.el][general.el]], I decided that pull requests would not cut it.
+* Key Bindings
+| Key   | Command                         |
+|-------+---------------------------------|
+| gh    | outline-up-heading              |
+| gj    | org-forward-heading-same-level  |
+| gk    | org-backward-heading-same-level |
+| gl    | outline-next-visible-heading    |
+| go    | syndicate-recompute-clocks |
+| <     | org-metaleft                    |
+| >     | org-metaright                   |
+| t     | org-todo                        |
+| <tab> | org-cycle                       |
+* Commands
+- =syndicate-open-links= :: Open a link from a visual selection
+- =syndicate-open-links-incognito= :: Open a link in incognito from a visual selection
