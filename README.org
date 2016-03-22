@@ -1,5 +1,5 @@
 [[file:LICENSE.txt][https://img.shields.io/badge/License-MIT-blue.svg]]
-* evil-org-mode
+* Syndicate
 This is a package for evil organization; it establishes evil-mode bindings for org-mode.
 As it is, this borrows heavily from [[https://github.com/edwtjo][edwtjo's]] [[https://github.com/edwtjo/evil-org-mode][evil-org-mode]].
 Having used it, I had a love-hate relationship with it.
