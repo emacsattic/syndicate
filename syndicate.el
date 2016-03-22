@@ -5,16 +5,16 @@
 (require 'evil)
 (require 'org)
 
-(define-minor-mode evil-org-mode
+(define-minor-mode syndicate-mode
   "Buffer-specific minor mode for evil-org."
   :init-value nil
-  :lighter " EvilOrg"
+  :lighter " Syn"
   :keymap (make-sparse-keymap)
-  :group 'evil-org)
+  :group 'syndicate-mode)
 
-(add-hook 'org-mode-hook 'evil-org-mode)
+(add-hook 'org-mode-hook 'syndicate-mode)
 
-(evil-define-key 'normal evil-org-mode-map
+(evil-define-key 'normal syndicate-mode-map
   "gh" 'outline-up-heading
   "gj" 'org-forward-heading-same-level
   "gk" 'org-backward-heading-same-level
@@ -24,5 +24,6 @@
   "t" 'org-todo
   (kbd "<tab>") 'org-cycle)
 
-(provide 'evil-org)
-;;; evil-org.el ends here
+(provide 'syndicate)
+
+;;; syndicate.el ends here
