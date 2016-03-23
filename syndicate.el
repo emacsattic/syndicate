@@ -1,7 +1,8 @@
-;;; evil-org.el --- evil keybindings for org-mode
+;;; syndicate.el --- evil keybindings for org-mode
 
 ;; URL: https://github.com/KNX32542/syndicate.git
 ;; Keywords: evil org bindings
+;; Package-Requires: ((evil "1.0"))
 
 ;;; Commentary:
 ;; Still in early stages, I plan to use and develop this for a while
