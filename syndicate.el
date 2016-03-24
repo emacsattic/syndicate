@@ -109,8 +109,7 @@
   "gl" 'outline-next-visible-heading
   "<" 'org-metaleft
   ">" 'org-metaright
-  "t" 'org-todo
-  (kbd "<tab>") 'org-cycle)
+  "t" 'org-todo)
 
 (provide 'syndicate)
 
