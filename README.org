@@ -22,3 +22,8 @@ The leader part was what got me to make a separate package, because I imagine th
 - =syndicate-open-links= :: Open a link from a visual selection
 - =syndicate-open-links-incognito= :: Open a link in incognito from a visual selection
 - =syndicate-recompute-clocks= :: recompute clocks from a visual selection
+* Tips
+- In terminal mode, =<tab>= for =org-cycle= does not work (at least for me). To fix this, put this before =(require 'evil)=:
+  #+begin_src emacs-lisp
+    (setq evil-want-C-i-jump nil)
+  #+end_src
