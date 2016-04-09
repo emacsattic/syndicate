@@ -8,6 +8,8 @@ The keybindings were convenient, however, there were issues:
 - leader commands would override my own
 - hitting =O= on a heading would insert another heading above it
 The leader part was what got me to make a separate package, because I imagine that some users will want some predefined maps of that sort, but having conflicting bindings and looking to migrate to [[https://github.com/noctuid/general.el][general.el]], I decided that pull requests would not cut it.
+* Dependencies
+- [[https://bitbucket.org/lyro/evil/wiki/Home][Evil]] :: for compatibility with the bindings
 * Installation
 1. Install from melpa: =M-x package-install RET syndicate=
    - M-x means =alt + x=, RET means hit =Enter=.
@@ -27,16 +29,18 @@ The leader part was what got me to make a separate package, because I imagine th
      (require 'syndicate)
    #+end_src
 * Key Bindings
-| Key   | Command                         |
-|-------+---------------------------------|
-| gh    | outline-up-heading              |
-| gj    | org-forward-heading-same-level  |
-| gk    | org-backward-heading-same-level |
-| gl    | outline-next-visible-heading    |
-| <     | org-metaleft                    |
-| >     | org-metaright                   |
-| t     | org-todo                        |
-| <tab> | org-cycle                       |
+| Key   | Command                               |
+|-------+---------------------------------------|
+| gh    | outline-up-heading                    |
+| gj    | org-forward-heading-same-level        |
+| gk    | org-backward-heading-same-level       |
+| gl    | outline-next-visible-heading          |
+| <     | org-metaleft                          |
+| >     | org-metaright                         |
+| t     | org-todo                              |
+| <tab> | org-cycle                             |
+| o     | syndicate-eol-then 'insert-item-below |
+- If anyone has objections to the =o= binding (It is really a hit-or-miss for me), open an issue and I will make a switch for it.
 * Commands
 - =syndicate-open-links= :: Open a link from a visual selection
 - =syndicate-open-links-incognito= :: Open a link in incognito from a visual selection

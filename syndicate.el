@@ -28,6 +28,7 @@
 ;; Still in early stages, I plan to use and develop this for a while
 
 ;;; Code:
+
 (require 'evil)
 (require 'org)
 
@@ -39,19 +40,32 @@
   :group 'syndicate-mode)
 
 (add-hook 'org-mode-hook 'syndicate-mode)
+
 ;; recompute clocks in visual selection
+
 (evil-define-operator syndicate-recompute-clocks (beg end type register yank-handler)
   :keep-visual t
   :move-point nil
   (interactive "<r>")
   (progn
-        (message "start!" )
-        (save-excursion
-        (while (< (point) end)
-            (org-evaluate-time-range)
-            (next-line)
-            (message "at position %S" (point))
-        ))))
+    (message "start!" )
+    (save-excursion
+      (while (< (point) end)
+        (org-evaluate-time-range)
+        (next-line)
+        (message "at position %S" (point))))))
+
+(defun syndicate-eol-then (fun)
+  "Go to end of line and then execute function FUN."
+  (end-of-line)
+  (funcall fun)
+  (evil-append nil))
+
+(defun insert-item-below ()
+  "Try to infer what to insert."
+  (if (not (org-in-item-p))
+      (insert "\n")
+    (org-insert-item)))
 
 ;; open org-mode links in visual selection
 
@@ -82,25 +96,21 @@
                 (progn
                   (org-open-at-point)))
             (let ((browse-url-generic-args '("")))
-              (org-open-at-point)))
-          )))))
-
+              (org-open-at-point))))))))
 
 ;;; open links in visual selection
 (evil-define-operator syndicate-open-links (beg end type register yank-handler)
   :keep-visual t
   :move-point nil
   (interactive "<r>")
-  (syndicate-generic-open-links beg end type register yank-handler nil)
-)
+  (syndicate-generic-open-links beg end type register yank-handler nil))
 
 ;;; open links in visual selection in incognito mode
 (evil-define-operator syndicate-open-links-incognito (beg end type register yank-handler)
   :keep-visual t
   :move-point nil
   (interactive "<r>")
-  (syndicate-generic-open-links beg end type register yank-handler t)
-)
+  (syndicate-generic-open-links beg end type register yank-handler t))
 
 (evil-define-key 'normal syndicate-mode-map
   "gh" 'outline-up-heading
@@ -109,7 +119,8 @@
   "gl" 'outline-next-visible-heading
   "<" 'org-metaleft
   ">" 'org-metaright
-  "t" 'org-todo)
+  "t" 'org-todo
+  "o" '(lambda () (interactive) (syndicate-eol-then 'insert-item-below)))
 
 (provide 'syndicate)
 
