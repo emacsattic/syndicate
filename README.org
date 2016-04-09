@@ -26,12 +26,10 @@ The leader part was what got me to make a separate package, because I imagine th
          (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
        (package-initialize) ;; You might already have this line
      #+end_src
-
 2. Add this to your =~/.emacs= or =~/.emacs.d/init.el=:
    #+begin_src emacs-lisp
      (require 'syndicate)
    #+end_src
-
 * Key Bindings
 | Key   | Command                               |
 |-------+---------------------------------------|
@@ -54,19 +52,16 @@ The leader part was what got me to make a separate package, because I imagine th
   #+begin_src emacs-lisp
     (setq evil-want-C-i-jump nil)
   #+end_src
-
 - I use [[https://github.com/noctuid/general.el][general.el]] for extra bindings.
   Personally, I use this for some org-mode bindings:
   #+begin_src emacs-lisp
     (general-define-key "oa" 'org-agenda ;; o<rg>a<genda>
                         "oc" 'org-capture) ;; o<rg>c<apture>
   #+end_src
-
   with these as some defaults:
   #+begin_src emacs-lisp
     (setq general-default-prefix "SPC")
     (setq general-default-states '(normal motion visual))
   #+end_src
-
   - =<leader>= bindings are great for declaring a wealth of convenient keybindings.
     Because of the diversity in people's =<leader>= bindings, I made the above behavior the choice of the user.
