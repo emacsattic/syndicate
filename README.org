@@ -10,6 +10,9 @@ The keybindings were convenient, however, there were issues:
 The leader part was what got me to make a separate package, because I imagine that some users will want some predefined maps of that sort, but having conflicting bindings and looking to migrate to [[https://github.com/noctuid/general.el][general.el]], I decided that pull requests would not cut it.
 * Demonstration
 [[file:assets/demo.gif]]
+- Theme: [[https://github.com/oneKelvinSmith/monokai-emacs][monokai-theme]]
+- Beautified Bullets: [[https://github.com/sabof/org-bullets][org-bullets]]
+- Mode-Line: [[https://github.com/raugturi/powerline-evil][powerline-evil]]
 * Dependencies
 - [[https://bitbucket.org/lyro/evil/wiki/Home][Evil]] :: for compatibility with the bindings
 * Installation
