@@ -71,15 +71,15 @@
 
 (defun syndicate-generic-open-links (beg end type register yank-handler incog)
   (progn
-    (save-excursion 
+    (save-excursion
       (goto-char beg)
       (catch 'break
         (while t
           (org-next-link)
           ;;; break from outer loop when there are no more
           ;;; org links
-          (when (or 
-                 (not (< (point) end)) 
+          (when (or
+                 (not (< (point) end))
                  (not (null org-link-search-failed)))
             (throw 'break 0))
 
