@@ -25,7 +25,8 @@
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 ;;; Commentary:
-;; Still in early stages, I plan to use and develop this for a while
+;; Syndicate is a package with sane defaults to complement org-mode
+;; with evil-mode.
 
 ;;; Code:
 
