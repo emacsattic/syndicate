@@ -103,15 +103,6 @@
             (let ((browse-url-generic-args '("")))
               (org-open-at-point))))))))
 
-(defun syndicate-insert-heading ()
-  "Same thing as C-RET, but ensures a newline after each header node."
-  (interactive)
-  (org-insert-heading-respect-content)
-  (beginning-of-line)
-  (open-line 1)
-  (forward-line)
-  (move-end-of-line 1))
-
 ;;; open links in visual selection
 (evil-define-operator syndicate-open-links (beg end type register yank-handler)
   :keep-visual t
@@ -135,6 +126,18 @@
   ">" 'org-metaright
   "t" 'org-todo
   "o" '(lambda () (interactive) (syndicate-eol-then 'insert-item-below)))
+
+(if syndicate-spacemacs-conventions
+    (define-key syndicate-mode-map (kbd "C-<return>") 'syndicate-insert-heading))
+
+(defun syndicate-insert-heading ()
+  "Same thing as C-RET, but ensures a newline after each header node."
+  (interactive)
+  (org-insert-heading-respect-content)
+  (beginning-of-line)
+  (open-line 1)
+  (forward-line)
+  (move-end-of-line 1))
 
 (provide 'syndicate)
 
