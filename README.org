@@ -57,7 +57,7 @@ The leader part was what got me to make a separate package, because I imagine th
 
 - syndicate-spacemacs-conventions is in its beginning stages.
   This only works if the cursor is not at the beginning of the header.
-  Automatically adding a newline after a newly inserted header before another header would also be great.
+  Automatically adding a newline after a newly inserted header before another header would also be great, but is not yet integrated.
 * Tips
 - In terminal mode, =<tab>= for =org-cycle= does not work by default (at least for me). To fix this, put this before =(require 'evil)=:
   #+begin_src emacs-lisp
