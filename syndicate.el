@@ -33,11 +33,6 @@
 (require 'evil)
 (require 'org)
 
-(defcustom syndicate-spacemacs-conventions nil
-  "If non-nil, obey spacemacs documentation conventions."
-  :group 'syndicate
-  :type 'boolean)
-
 (define-minor-mode syndicate-mode
   "Buffer-specific minor mode for evil-org."
   :init-value nil
@@ -127,18 +122,6 @@
   ">" 'org-metaright
   "t" 'org-todo
   "o" '(lambda () (interactive) (syndicate-eol-then 'insert-item-below)))
-
-(if syndicate-spacemacs-conventions
-    (define-key syndicate-mode-map (kbd "C-<return>") 'syndicate-insert-heading))
-
-(defun syndicate-insert-heading ()
-  "Same thing as C-RET, but ensures a newline after each header node."
-  (interactive)
-  (org-insert-heading-respect-content)
-  (beginning-of-line)
-  (open-line 1)
-  (forward-line)
-  (move-end-of-line 1))
 
 (provide 'syndicate)
 
